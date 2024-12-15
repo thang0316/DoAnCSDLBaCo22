@@ -30,8 +30,8 @@
         {
             lableMaTaiKhoan = new Label();
             lable = new Label();
-            txtTenDangNhap = new TextBox();
-            txtMatKhau = new TextBox();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
             btnThoat = new Button();
             btnDangNhap = new Button();
             SuspendLayout();
@@ -56,19 +56,19 @@
             lable.TabIndex = 1;
             lable.Text = "Mật khẩu:";
             // 
-            // txtTenDangNhap
+            // textBox1
             // 
-            txtTenDangNhap.Location = new Point(202, 67);
-            txtTenDangNhap.Name = "txtTenDangNhap";
-            txtTenDangNhap.Size = new Size(187, 27);
-            txtTenDangNhap.TabIndex = 2;
+            textBox1.Location = new Point(202, 67);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(187, 27);
+            textBox1.TabIndex = 2;
             // 
-            // txtMatKhau
+            // textBox2
             // 
-            txtMatKhau.Location = new Point(202, 105);
-            txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.Size = new Size(187, 27);
-            txtMatKhau.TabIndex = 3;
+            textBox2.Location = new Point(202, 105);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(187, 27);
+            textBox2.TabIndex = 3;
             // 
             // btnThoat
             // 
@@ -93,16 +93,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(475, 252);
+            ClientSize = new Size(508, 252);
             Controls.Add(btnDangNhap);
             Controls.Add(btnThoat);
-            Controls.Add(txtMatKhau);
-            Controls.Add(txtTenDangNhap);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(lable);
             Controls.Add(lableMaTaiKhoan);
             Name = "FrmDangNhap";
             Text = "Đăng nhập";
-            Load += FrmDangNhap_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,8 +110,8 @@
 
         private Label lableMaTaiKhoan;
         private Label lable;
-        private TextBox txtTenDangNhap;
-        private TextBox txtMatKhau;
+        private TextBox textBox1;
+        private TextBox textBox2;
         private Button btnThoat;
         private Button btnDangNhap;
     }

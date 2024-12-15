@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuSV));
             Btn_ = new Button();
             Btn_dkmh = new Button();
             Btn_lh = new Button();
@@ -35,6 +36,7 @@
             panel1 = new Panel();
             txt_Tk = new TextBox();
             lb_tk = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,6 +89,7 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(txt_Tk);
             panel1.Controls.Add(lb_tk);
+            panel1.Controls.Add(label1);
             panel1.Location = new Point(535, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 188);
@@ -114,11 +117,24 @@
             lb_tk.TabIndex = 5;
             lb_tk.Text = "Tài Khoản:";
             // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.Image = (Image)resources.GetObject("label1.Image");
+            label1.ImageAlign = ContentAlignment.MiddleLeft;
+            label1.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(252, 59);
+            label1.TabIndex = 0;
+            label1.Text = "Đăng nhập";
+            label1.TextAlign = ContentAlignment.TopRight;
+            // 
             // TrangChuSV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(837, 450);
+            ClientSize = new Size(843, 450);
             Controls.Add(panel1);
             Controls.Add(Btn_Diem);
             Controls.Add(Btn_lh);
@@ -139,6 +155,7 @@
         private Button Btn_lh;
         private Button Btn_Diem;
         private Panel panel1;
+        private Label label1;
         private TextBox txt_Tk;
         private Label lb_tk;
     }

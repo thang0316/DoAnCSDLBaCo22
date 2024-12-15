@@ -16,10 +16,5 @@ namespace GUI
         {
             InitializeComponent();
         }
-
-        private void DangKiMonHoc_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
