@@ -10,7 +10,13 @@ namespace DTO
     {
         string MaTaiKhoan {  get; set; }
         string MatKhau { get; set; }
-
         int PhanQuyen { get; set; }
+
+        public TaiKhoan(string maTaiKhoan, string matKhau, int phanQuyen)
+        {
+            MaTaiKhoan = maTaiKhoan;
+            MatKhau = matKhau;
+            PhanQuyen = phanQuyen;
+        }
     }
 }
