@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class DangKiMonHoc : Form
+    public partial class FrmLichHoc : Form
     {
-        public DangKiMonHoc()
+        public FrmLichHoc()
         {
             InitializeComponent();
-        }
-
-        private void DangKiMonHoc_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
