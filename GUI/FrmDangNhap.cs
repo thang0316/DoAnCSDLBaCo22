@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DAL;
+using QLSV;
 
 namespace GUI
 {
@@ -16,14 +17,18 @@ namespace GUI
             string username = txtTenDangNhap.Text;
             string password = txtMatKhau.Text;
 
-            bool TaiKhoan =  tkBLL.AuthenticateUser(username, password);
-            if (TaiKhoan)
+            bool taikhoan =  tkBLL.AuthenticateUser(username, password);
+            int phanquyen = tkBLL.KiemTraPhanQuyen(username);
+            if (taikhoan)
             {
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Nếu đăng nhập thành công, có thể chuyển sang form chính của bạn
-                // Ví dụ: 
-                // new FrmMain().Show();
-                // this.Hide(); // Ẩn form đăng nhập
+                if(phanquyen == 1)
+                {
+                    TrangChuSV frm = new TrangChuSV(username);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Show();
+                }
             }
             else
             {

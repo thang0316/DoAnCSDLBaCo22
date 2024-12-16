@@ -17,5 +17,10 @@ namespace BLL
             var taiKhoan = tkAccess.AuthenticateUser(username, password);
             return taiKhoan != null; // Nếu tài khoản hợp lệ, trả về true
         }
+
+        public int KiemTraPhanQuyen(string username)
+        {
+            return tkAccess.KiemTraPhanQuyen(username);  
+        }
     }
 }

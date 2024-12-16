@@ -119,5 +119,14 @@ namespace DAL
                 Console.WriteLine("Lỗi khi xóa tài khoản: " + ex.Message);
             }
         }
+
+        public int KiemTraPhanQuyen(string username)
+        {
+            var filter = Builders<BsonDocument>.Filter.Eq("MaTaiKhoan", username);
+            var taiKhoanDoc = _taiKhoanCollection.Find(filter).FirstOrDefault();
+            
+            return taiKhoanDoc["PhanQuyen"].AsInt32; // Trả về phân quyền
+        }
+
     }
 }

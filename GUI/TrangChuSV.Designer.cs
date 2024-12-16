@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChuSV));
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             button1 = new Button();
+            labelMSSV = new Label();
+            labelHoTen = new Label();
+            label2 = new Label();
+            label1 = new Label();
             pictureBox1 = new PictureBox();
             label5 = new Label();
             label6 = new Label();
@@ -52,8 +53,8 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(labelMSSV);
+            groupBox1.Controls.Add(labelHoTen);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(448, 5);
@@ -62,15 +63,35 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // label1
+            // button1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label1.Location = new Point(17, 57);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Họ tên:";
+            button1.Location = new Point(98, 88);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 4;
+            button1.Text = "Đăng xuất";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // labelMSSV
+            // 
+            labelMSSV.AutoSize = true;
+            labelMSSV.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            labelMSSV.Location = new Point(98, 23);
+            labelMSSV.Name = "labelMSSV";
+            labelMSSV.Size = new Size(49, 20);
+            labelMSSV.TabIndex = 3;
+            labelMSSV.Text = "MSSV";
+            // 
+            // labelHoTen
+            // 
+            labelHoTen.AutoSize = true;
+            labelHoTen.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            labelHoTen.Location = new Point(98, 57);
+            labelHoTen.Name = "labelHoTen";
+            labelHoTen.Size = new Size(55, 20);
+            labelHoTen.TabIndex = 2;
+            labelHoTen.Text = "Họ tên";
             // 
             // label2
             // 
@@ -82,36 +103,15 @@
             label2.TabIndex = 1;
             label2.Text = "MSSV:";
             // 
-            // label3
+            // label1
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label3.Location = new Point(98, 23);
-            label3.Name = "label3";
-            label3.Size = new Size(49, 20);
-            label3.TabIndex = 3;
-            label3.Text = "MSSV";
-            
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label4.Location = new Point(98, 57);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 20);
-            label4.TabIndex = 2;
-            label4.Text = "Họ tên";
-            
-            // 
-            // button1
-            // 
-            button1.Location = new Point(98, 88);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Đăng xuất";
-            button1.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label1.Location = new Point(17, 57);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Họ tên:";
             // 
             // pictureBox1
             // 
@@ -132,23 +132,21 @@
             label5.Size = new Size(65, 20);
             label5.TabIndex = 5;
             label5.Text = "Lịch học";
-            
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label6.Location = new Point(170, 76);
+            label6.Location = new Point(214, 76);
             label6.Name = "label6";
             label6.Size = new Size(130, 20);
             label6.TabIndex = 7;
             label6.Text = "Đăng ký môn học";
-            
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = GUI.Properties.Resources.icons8_timetable_100;
-            pictureBox2.Location = new Point(197, 12);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(241, 12);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(75, 63);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -164,10 +162,10 @@
             label7.Size = new Size(106, 20);
             label7.TabIndex = 9;
             label7.Text = "Xem thông tin";
-            
+            // 
             // pictureBox3
             // 
-            pictureBox3.Image = GUI.Properties.Resources.icons8_timetable_100;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(43, 129);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(75, 63);
@@ -179,16 +177,16 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label8.Location = new Point(395, 262);
+            label8.Location = new Point(205, 195);
             label8.Name = "label8";
-            label8.Size = new Size(65, 20);
+            label8.Size = new Size(149, 20);
             label8.TabIndex = 11;
-            label8.Text = "Lịch học";
+            label8.Text = "Xem kết quả học tập";
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = GUI.Properties.Resources.icons8_timetable_100;
-            pictureBox4.Location = new Point(389, 191);
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(245, 129);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(75, 63);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -211,6 +209,7 @@
             Controls.Add(groupBox1);
             Name = "TrangChuSV";
             Text = "Trang chủ";
+            Load += TrangChuSV_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -226,8 +225,8 @@
         private GroupBox groupBox1;
         private Label label2;
         private Label label1;
-        private Label label3;
-        private Label label4;
+        private Label labelMSSV;
+        private Label labelHoTen;
         private Button button1;
         private PictureBox pictureBox1;
         private Label label5;

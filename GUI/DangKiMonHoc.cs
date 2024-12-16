@@ -21,5 +21,10 @@ namespace GUI
         {
 
         }
+
+        private void cbHocKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

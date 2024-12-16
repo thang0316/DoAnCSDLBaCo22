@@ -36,19 +36,18 @@
             groupBox1 = new GroupBox();
             listView1 = new ListView();
             colMaHocPhan = new ColumnHeader();
-            colSoLuong = new ColumnHeader();
-            colNgayBatDau = new ColumnHeader();
-            colNgayKetThuc = new ColumnHeader();
-            colPhongHoc = new ColumnHeader();
+            colTenHocPhan = new ColumnHeader();
+            colSoTinChi = new ColumnHeader();
             labelDanhSachMonHoc = new Label();
             cbDanhSachMonHoc = new ComboBox();
             button1 = new Button();
             groupBox2 = new GroupBox();
             listView2 = new ListView();
-            colMaHocPhan1 = new ColumnHeader();
-            colNgayBatDau1 = new ColumnHeader();
-            colNgayKetThuc1 = new ColumnHeader();
-            colPhongHoc1 = new ColumnHeader();
+            colMaHocPhanDK = new ColumnHeader();
+            colTenHocPhanDK = new ColumnHeader();
+            colSoTinChiDK = new ColumnHeader();
+            colGiangVien = new ColumnHeader();
+            colGiangVienDK = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -66,6 +65,7 @@
             // cbNamHoc
             // 
             cbNamHoc.FormattingEnabled = true;
+            cbNamHoc.Items.AddRange(new object[] { " 2024 - 2025" });
             cbNamHoc.Location = new Point(126, 24);
             cbNamHoc.Name = "cbNamHoc";
             cbNamHoc.Size = new Size(151, 28);
@@ -74,11 +74,12 @@
             // cbHocKy
             // 
             cbHocKy.FormattingEnabled = true;
-            cbHocKy.Items.AddRange(new object[] { "1", "2", "3" });
+            cbHocKy.Items.AddRange(new object[] { "1", "2" });
             cbHocKy.Location = new Point(381, 24);
             cbHocKy.Name = "cbHocKy";
             cbHocKy.Size = new Size(59, 28);
             cbHocKy.TabIndex = 3;
+            cbHocKy.SelectedIndexChanged += cbHocKy_SelectedIndexChanged;
             // 
             // labelHocKy
             // 
@@ -111,7 +112,8 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { colMaHocPhan, colSoLuong, colNgayBatDau, colNgayKetThuc, colPhongHoc });
+            listView1.CheckBoxes = true;
+            listView1.Columns.AddRange(new ColumnHeader[] { colMaHocPhan, colTenHocPhan, colSoTinChi, colGiangVien });
             listView1.Location = new Point(10, 29);
             listView1.Name = "listView1";
             listView1.Size = new Size(738, 156);
@@ -124,25 +126,15 @@
             colMaHocPhan.Text = "Mã học phần";
             colMaHocPhan.Width = 150;
             // 
-            // colSoLuong
+            // colTenHocPhan
             // 
-            colSoLuong.Text = "Số lượng sinh viên";
-            colSoLuong.Width = 150;
+            colTenHocPhan.Text = "Tên học phân";
+            colTenHocPhan.Width = 150;
             // 
-            // colNgayBatDau
+            // colSoTinChi
             // 
-            colNgayBatDau.Text = "Ngày bắt đầu";
-            colNgayBatDau.Width = 150;
-            // 
-            // colNgayKetThuc
-            // 
-            colNgayKetThuc.Text = "Ngày kết thúc";
-            colNgayKetThuc.Width = 150;
-            // 
-            // colPhongHoc
-            // 
-            colPhongHoc.Text = "Phòng học";
-            colPhongHoc.Width = 150;
+            colSoTinChi.Text = "Số tín chỉ";
+            colSoTinChi.Width = 150;
             // 
             // labelDanhSachMonHoc
             // 
@@ -177,46 +169,52 @@
             groupBox2.Controls.Add(listView2);
             groupBox2.Location = new Point(12, 342);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(763, 167);
+            groupBox2.Size = new Size(763, 189);
             groupBox2.TabIndex = 10;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách môn học đã đăng ký";
             // 
             // listView2
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { colMaHocPhan1, colNgayBatDau1, colNgayKetThuc1, colPhongHoc1 });
-            listView2.Location = new Point(10, 27);
+            listView2.CheckBoxes = true;
+            listView2.Columns.AddRange(new ColumnHeader[] { colMaHocPhanDK, colTenHocPhanDK, colSoTinChiDK, colGiangVienDK });
+            listView2.Location = new Point(10, 26);
             listView2.Name = "listView2";
-            listView2.Size = new Size(744, 136);
-            listView2.TabIndex = 0;
+            listView2.Size = new Size(738, 157);
+            listView2.TabIndex = 1;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
             // 
-            // colMaHocPhan1
+            // colMaHocPhanDK
             // 
-            colMaHocPhan1.Text = "Mã Học phần";
-            colMaHocPhan1.Width = 150;
+            colMaHocPhanDK.Text = "Mã học phần";
+            colMaHocPhanDK.Width = 150;
             // 
-            // colNgayBatDau1
+            // colTenHocPhanDK
             // 
-            colNgayBatDau1.Text = "Ngày bắt đầu";
-            colNgayBatDau1.Width = 150;
+            colTenHocPhanDK.Text = "Tên học phân";
+            colTenHocPhanDK.Width = 150;
             // 
-            // colNgayKetThuc1
+            // colSoTinChiDK
             // 
-            colNgayKetThuc1.Text = "Ngày kết thúc";
-            colNgayKetThuc1.Width = 150;
+            colSoTinChiDK.Text = "Số tín chỉ";
+            colSoTinChiDK.Width = 150;
             // 
-            // colPhongHoc1
+            // colGiangVien
             // 
-            colPhongHoc1.Text = "Phòng học";
-            colPhongHoc1.Width = 150;
+            colGiangVien.Text = "Giảng viên";
+            colGiangVien.Width = 150;
+            // 
+            // colGiangVienDK
+            // 
+            colGiangVienDK.Text = "Giảng viên";
+            colGiangVienDK.Width = 150;
             // 
             // DangKiMonHoc
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 530);
+            ClientSize = new Size(800, 556);
             Controls.Add(groupBox2);
             Controls.Add(button1);
             Controls.Add(cbDanhSachMonHoc);
@@ -246,18 +244,17 @@
         private GroupBox groupBox1;
         private ListView listView1;
         private ColumnHeader colMaHocPhan;
-        private ColumnHeader colSoLuong;
-        private ColumnHeader colNgayBatDau;
-        private ColumnHeader colNgayKetThuc;
-        private ColumnHeader colPhongHoc;
+        private ColumnHeader colSoTinChi;
         private Label labelDanhSachMonHoc;
         private ComboBox cbDanhSachMonHoc;
         private Button button1;
         private GroupBox groupBox2;
+        private ColumnHeader colTenHocPhan;
         private ListView listView2;
-        private ColumnHeader colMaHocPhan1;
-        private ColumnHeader colNgayBatDau1;
-        private ColumnHeader colNgayKetThuc1;
-        private ColumnHeader colPhongHoc1;
+        private ColumnHeader colMaHocPhanDK;
+        private ColumnHeader colTenHocPhanDK;
+        private ColumnHeader colSoTinChiDK;
+        private ColumnHeader colGiangVien;
+        private ColumnHeader colGiangVienDK;
     }
 }
